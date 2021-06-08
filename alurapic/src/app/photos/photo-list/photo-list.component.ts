@@ -27,11 +27,9 @@ export class PhotoListComponent implements OnInit, OnDestroy {
       .subscribe(filter => this.filter = filter);
   }
 
-  onKeyUp(target: any) {
-    if (target instanceof EventTarget) {
-      var elemento = target as HTMLInputElement;
-      this.filter = elemento.value;
-    }
+  onKeyUp(e: Event) {
+    const elemento = <HTMLInputElement>e.target;
+    this.debounce.next(elemento.value);
   }
 
 }
