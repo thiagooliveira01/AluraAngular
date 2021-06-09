@@ -7,6 +7,7 @@ import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoFormComponent } from './photo-form/photo-form.component';
 import { PhotosComponent } from './photo-list/photos/photos.component';
 import { FileterByDescrition } from './photo-list/filter-by-descriptino.pipe';
+import { LoadButtonComponent } from './photo-list/load-button/load-button.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { FileterByDescrition } from './photo-list/filter-by-descriptino.pipe';
         PhotoListComponent,
         PhotoFormComponent,
         PhotosComponent,
-        FileterByDescrition
+        FileterByDescrition,
+        LoadButtonComponent
     ],
     imports: [
         HttpClientModule,
