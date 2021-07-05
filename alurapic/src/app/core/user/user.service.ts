@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 @Injectable({ providedIn: 'root' })
 export class UserService {
 
-    private userSubject = new BehaviorSubject<User>({id:0, name:'',email:''});
+    private userSubject = new BehaviorSubject<User|null>(null);
     private userName: string = "";
     constructor(private tokenService: TokenService) {
         this.tokenService.hasToken() &&
@@ -32,7 +32,7 @@ export class UserService {
 
     logout(){
         this.tokenService.removeToken();
-        this.userSubject.next({id:0, name:'',email:''});
+        this.userSubject.next(null);
     }
 
     isLogged(){
