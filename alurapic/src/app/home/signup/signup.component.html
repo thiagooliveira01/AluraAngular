@@ -44,8 +44,8 @@
             text="Maximum length is 30">
         </ap-vmessage>
         <ap-vmessage
-            *ngIf="signupForm.get('userName')?.errors?.pattern"
-            text="Must be lowercase">
+            *ngIf="signupForm.get('userName')?.errors?.lowerCase"
+            text="Must be lower case">
         </ap-vmessage>
     </div>
 
@@ -65,7 +65,7 @@
         </ap-vmessage>
     </div>
 
-    <button class="btn btn-primary btn-block">Register</button>
+    <button [disabled]="signupForm.invalid" class="btn btn-primary btn-block">Register</button>
 
     <p>Already a user? <a [routerLink]="['']">Sign In!</a></p>
 </form>
