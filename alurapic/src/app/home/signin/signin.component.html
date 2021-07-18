@@ -2,7 +2,6 @@
 
 <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
         
-
     <div class="form-group">
         <input #userNameInput
                 formControlName="userName"
@@ -29,7 +28,7 @@
 
     <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">login</button>
 </form>
-<p>Not a user?<a>Register now</a></p>
+<p>Not an user? <a [routerLink]="['signup']">Register now</a></p>
 
 
 
