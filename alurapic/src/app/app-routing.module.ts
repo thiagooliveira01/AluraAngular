@@ -29,9 +29,14 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: 'p/:photoId', 
-  component: PhotoDetailsComponent
+    component: PhotoDetailsComponent
   },
-  { path: '**', component: NotFoundComponent },
+  { path: 'not-found',
+    component: NotFoundComponent 
+  },
+  { path: '**', 
+    redirectTo: 'not-found' 
+  }
 ];
 
 @NgModule({
